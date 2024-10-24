@@ -1,25 +1,54 @@
+# Sales Data Analysis Project
 
-In this Sales Data Analysis Project, I'm performing several key data engineering tasks to analyze sales data stored in Azure Blob Storage and derive meaningful insights using Databricks and Delta Lake. Here's a detailed description of what I'm achieving:
+## Project Overview
+In this project, I perform several key data engineering tasks to analyze sales data stored in Azure Blob Storage. Utilizing Databricks and Delta Lake, I derive meaningful insights to support stakeholders' decision-making processes.
 
-Data Mounting: I'm mounting the Azure Blob Storage container to Databricks using the specified mount_point, enabling easy access to the sales data stored in the cloud.
+## Key Achievements
 
-Data Ingestion: The sales data (from the CSV file sales.csv) is loaded into a Spark DataFrame for processing. This makes the data accessible for cleaning, transformation, and analysis.
+### 1. Data Mounting
+- **Objective**: Mount the Azure Blob Storage container to Databricks for easy access.
+- **Method**: Used a specified `mount_point` to facilitate access to sales data in the cloud.
 
-Data Cleaning: I'm cleaning the data by:
+### 2. Data Ingestion
+- **Objective**: Load sales data for processing.
+- **Method**: Imported sales data from the CSV file `sales.csv` into a Spark DataFrame.
 
-Dropping missing values (dropna()).
-Removing duplicates (dropDuplicates()).
-Casting the transaction_date column to the correct date type.
-Aggregating Sales by Region: I aggregate the sales data by region, calculating the total sales amount for each region using the groupBy and sum functions in Spark. The result is a summary of sales performance by geographical area.
+### 3. Data Cleaning
+- **Tasks**:
+  - Dropped missing values using `dropna()`.
+  - Removed duplicates with `dropDuplicates()`.
+  - Cast the `transaction_date` column to the correct date type.
 
-Writing Data to Delta Lake: The cleaned and aggregated sales data is saved in Delta Lake format, providing a highly performant and reliable storage layer that supports ACID transactions and versioning.
+### 4. Aggregating Sales by Region
+- **Objective**: Analyze sales performance geographically.
+- **Method**: Aggregated the sales data by region using Spark's `groupBy` and `sum` functions, producing a summary of total sales per region.
 
-Data Analysis: I perform analysis to identify the top-performing regions by total sales, ordering them in descending order of sales.
+### 5. Writing Data to Delta Lake
+- **Objective**: Store cleaned and aggregated data reliably.
+- **Method**: Saved the aggregated sales data in Delta Lake format, leveraging its support for ACID transactions and versioning.
 
-Visualization: I visualize the total sales by region to help stakeholders easily interpret the performance of each region.
+### 6. Data Analysis
+- **Objective**: Identify top-performing regions.
+- **Method**: Analyzed total sales by region, ordering results in descending order of sales.
 
-SQL Table Creation: I register the aggregated sales data as a Delta table (sales_by_region) in Databricks, enabling me to query the data using SQL.
+### 7. Visualization
+- **Objective**: Present sales data for stakeholder insights.
+- **Method**: Visualized total sales by region to facilitate easy interpretation of performance metrics.
 
-Stakeholder Insights: The SQL query I run allows me to provide answers about the regions with the highest sales, which is crucial for stakeholders who want to understand the geographical sales distribution and identify top-performing regions.
+### 8. SQL Table Creation
+- **Objective**: Enable SQL queries for data analysis.
+- **Method**: Registered the aggregated sales data as a Delta table (`sales_by_region`) in Databricks.
 
-This project integrates data cleaning, aggregation, storage in Delta Lake, and SQL-based data analysis, providing a robust solution for analyzing and reporting sales data trends.
+### 9. Stakeholder Insights
+- **Objective**: Provide actionable insights to stakeholders.
+- **Method**: Executed SQL queries to identify regions with the highest sales, informing stakeholders about geographical sales distribution and performance.
+
+## Conclusion
+This project integrates data cleaning, aggregation, storage in Delta Lake, and SQL-based analysis, providing a robust solution for analyzing and reporting sales data trends. The methodologies employed ensure accurate and reliable insights that can significantly assist stakeholders in decision-making processes.
+
+## Skills
+- **Databricks** (Data engineering platform)
+- **Delta Lake** (Storage layer for big data)
+- **Apache Spark** (Data processing engine)
+- **SQL** (Query language for data analysis)
+- **Azure Blob Storage** (Cloud storage service)
